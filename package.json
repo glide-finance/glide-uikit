@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit",
+  "repository": "https://github.com/glide-finance/glide-uikit",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
