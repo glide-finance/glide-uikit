@@ -28,9 +28,7 @@ const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
       target="_blank"
     >
       {/* <PancakeRoundIcon width="24px" mr="8px" /> */}
-      <div>
-        <img src="../icons/Glide.png" width="24" height="24" alt="Glide Token" />
-      </div>
+      {/* <img src="widgets/Menu/components/icons/Glide.png" width="24" height="24" alt="Glide Token" /> */}
       <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
   ) : (
