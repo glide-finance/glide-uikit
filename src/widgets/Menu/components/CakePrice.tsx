@@ -27,7 +27,10 @@ const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
       href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
       target="_blank"
     >
-      <PancakeRoundIcon width="24px" mr="8px" />
+      {/* <PancakeRoundIcon width="24px" mr="8px" /> */}
+      <div>
+        <img src="../icons/Glide.png" width="24" height="24" alt="Glide Token" />
+      </div>
       <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
   ) : (
