@@ -40,13 +40,6 @@ const connectors: Config[] = [
   //   connectorId: ConnectorNames.Injected,
   //   priority: 999,
   // },
-
-  // {
-  //   title: "Binance Chain",
-  //   icon: BinanceChain,
-  //   connectorId: ConnectorNames.BSC,
-  //   priority: 999,
-  // },
   // {
   //   title: "SafePal",
   //   icon: SafePal,
