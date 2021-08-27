@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
+import Flex from "../../../components/Box/Flex";
+import Logo from "./Logo";
 import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
 import { PanelProps, PushedProps } from "../types";
 
@@ -37,8 +39,18 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
+  const { isDark, homeLink, globalMenu, userMenu } = props;
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
+      <Logo
+        isPushed={isPushed}
+        togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+        isDark={isDark}
+        href={homeLink?.href ?? "/"}
+      />
+      <Flex>
+        {globalMenu} {userMenu}
+      </Flex>
       <PanelBody {...props} />
       <PanelFooter {...props} />
     </StyledPanel>

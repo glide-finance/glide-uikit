@@ -21,6 +21,7 @@ const blink = keyframes`
 const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
+  margin: 0 auto;
   .mobile-icon {
     width: 32px;
     ${({ theme }) => theme.mediaQueries.nav} {
@@ -59,19 +60,19 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
 
   return (
     <Flex>
-      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
+      {/* <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
         {isPushed ? (
           <HamburgerCloseIcon width="24px" color="textSubtle" />
         ) : (
           <HamburgerIcon width="24px" color="textSubtle" />
         )}
-      </MenuButton>
+      </MenuButton> */}
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
+        <StyledLink as="a" href={href} aria-label="Glide home page">
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="Pancake home page">
+        <StyledLink to={href} aria-label="Glide home page">
           {innerLogo}
         </StyledLink>
       )}
