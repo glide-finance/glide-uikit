@@ -141,20 +141,26 @@ export const links = [
 
 export const socials = [
   {
-    label: "Telegram",
-    icon: "TelegramIcon",
-    items: [
-      {
-        label: "English",
-        href: "https://t.me/glide_finance",
-      },
-    ],
-  },
-  {
     label: "Twitter",
     icon: "TwitterIcon",
     href: "https://twitter.com/GlideFinance",
   },
+  {
+    label: "Telegram",
+    icon: "TelegramIcon",
+    // items: [
+    //   {
+    //     label: "English",
+    //     href: "https://t.me/glide_finance",
+    //   },
+    // ],
+    href: "https://t.me/glide_finance"
+  },
+  {
+    label: "Medium",
+    icon: "MediumIcon",
+    href: "https://medium.com/glide-finance"
+  }
 ];
 
 export const MENU_HEIGHT = 64;

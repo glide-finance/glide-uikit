@@ -7,7 +7,7 @@ import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "../
 import MenuButton from "./MenuButton";
 
 interface Props {
-  isPushed: boolean;
+  isPushed?: boolean;
   isDark: boolean;
   togglePush: () => void;
   href: string;

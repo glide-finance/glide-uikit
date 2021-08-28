@@ -45,7 +45,11 @@ export interface PanelProps {
   currentLang: string;
   langs: Language[];
   setLang: (lang: Language) => void;
+  togglePush: () => void;
   links: Array<MenuEntry>;
+  userMenu?: ReactElement;
+  // globalMenu?: ReactElement;
+  href: string;
 }
 
 export interface NavProps extends PanelProps {

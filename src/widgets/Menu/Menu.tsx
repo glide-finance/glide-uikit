@@ -37,9 +37,9 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
+//margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
@@ -124,8 +124,9 @@ const Menu: React.FC<NavProps> = ({
       </StyledNav> */}
       <BodyWrapper>
         <Panel
-          homeLink={homeLink}
-          globalMenu={globalMenu}
+          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+          href={homeLink?.href ?? "/"}
+          // globalMenu={globalMenu}
           userMenu={userMenu}
           isPushed={isPushed}
           isMobile={isMobile}
