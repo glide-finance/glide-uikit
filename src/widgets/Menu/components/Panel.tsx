@@ -50,12 +50,14 @@ const Panel: React.FC<Props> = (props) => {
   return (
     <StyledPanel isPushed={isPushed} showMenu={showMenu}>
       <Logo isPushed={isPushed} togglePush={togglePush} isDark={isDark} href={href} />
-      <CakePrice cakePriceUsd={cakePriceUsd} />
       <StyledFlex>
         {/* {globalMenu} */}
         {userMenu}
       </StyledFlex>
       <PanelBody {...props} />
+      <StyledFlex>
+        <CakePrice cakePriceUsd={cakePriceUsd} />
+      </StyledFlex>
       <PanelFooter {...props} />
     </StyledPanel>
   );

@@ -160,7 +160,13 @@ export const socials = [
     label: "Medium",
     icon: "MediumIcon",
     href: "https://medium.com/glide-finance"
-  }
+  },
+  {
+    label: "Docs",
+    icon: "GitbookIcon",
+    href: "docs.glidefinance.io"
+  },
+
 ];
 
 export const MENU_HEIGHT = 64;
