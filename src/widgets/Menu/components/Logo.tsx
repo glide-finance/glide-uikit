@@ -18,6 +18,37 @@ const blink = keyframes`
   50% { transform:  scaleY(0.1); } 
 `;
 
+// const StyledLink = styled(Link)`
+//   display: flex;
+//   align-items: center;
+//   margin: 0 auto;
+//   .mobile-icon {
+//     width: 32px;
+//     ${({ theme }) => theme.mediaQueries.nav} {
+//       display: none;
+//     }
+//   }
+//   .desktop-icon {
+//     width: 160px;
+//     display: none;
+//     ${({ theme }) => theme.mediaQueries.nav} {
+//       display: block;
+//     }
+//   }
+//   .right-eye {
+//     animation-delay: 20ms;
+//   }
+//   &:hover {
+//     .left-eye,
+//     .right-eye {
+//       transform-origin: center 60%;
+//       animation-name: ${blink};
+//       animation-duration: 350ms;
+//       animation-iteration-count: 1;
+//     }
+//   }
+// `;
+
 const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
@@ -29,7 +60,6 @@ const StyledLink = styled(Link)`
     }
   }
   .desktop-icon {
-    width: 160px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;

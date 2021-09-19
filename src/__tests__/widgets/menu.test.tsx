@@ -36,7 +36,7 @@ it("renders correctly", () => {
         langs={langs}
         setLang={noop}
         currentLang="en-US"
-        cakePriceUsd={0.23158668932877668}
+        glidePriceUsd={0.23158668932877668}
         links={menuConfig}
       >
         body

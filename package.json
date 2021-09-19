@@ -1,6 +1,6 @@
 {
   "name": "@glide-finance/uikit",
-  "version": "1.0.10",
+  "version": "1.0.13",
   "description": "Set of UI components for Glide Finance projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

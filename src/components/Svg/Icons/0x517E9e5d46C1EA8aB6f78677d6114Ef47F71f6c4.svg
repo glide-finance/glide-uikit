@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   height="16"
+   width="16"
+   id="svg985"
+   version="1.1"
+   viewBox="0 0 16 16">
+  <metadata
+     id="metadata991">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>logo-mark</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs989">
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="332.73999"
+       x2="205.74001"
+       y1="332.73999"
+       x1="205.63"
+       id="linear-gradient-8" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(83.96,0,0,-88.1,-430035.42,-632293.51)"
+       y2="-7178.9702"
+       x2="5126.7202"
+       y1="-7178.9702"
+       x1="5126.21"
+       id="linear-gradient">
+      <stop
+         id="stop933"
+         stop-color="#f2ad6c"
+         offset="0" />
+      <stop
+         id="stop935"
+         stop-color="#fff"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="332.51999"
+       x2="400.07001"
+       y1="332.51999"
+       x1="83.940002"
+       id="linear-gradient-7" />
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="169.36"
+       x2="316.69"
+       y1="169.36"
+       x1="297.51999"
+       id="linear-gradient-6" />
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="158.10001"
+       x2="406.01001"
+       y1="158.10001"
+       x1="198.14999"
+       id="linear-gradient-5" />
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="180.11"
+       x2="403.53"
+       y1="180.11"
+       x1="389.13"
+       id="linear-gradient-4" />
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="183.67"
+       x2="298.25"
+       y1="183.67"
+       x1="290.44"
+       id="linear-gradient-3" />
+    <linearGradient
+       gradientTransform="matrix(0.04499068,0,0,0.04499068,29.561359,-2.221889)"
+       xlink:href="#linear-gradient"
+       y2="194.28999"
+       x2="408.79001"
+       y1="194.28999"
+       x1="403.04001"
+       id="linear-gradient-2" />
+  </defs>
+  <title
+     id="title959">logo-mark</title>
+  <circle
+     r="8"
+     cy="8"
+     cx="8"
+     id="path2886"
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.15554443;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+  <g
+     transform="translate(-0.968352,0.48556825)"
+     id="g2961">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.10727054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.7746361,2.2002325 2.580921,4.0442665 5.7746361,5.8991569 8.9683514,7.7428036 12.162066,5.8991569 15.355783,4.0442665 12.162066,2.2002325 8.9683514,4.0442665 Z"
+       id="polygon961" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:0.10727054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.7746361,7.2860598 2.580921,9.1300941 5.7746361,10.984597 8.9683514,12.828631 12.162066,10.984597 15.355783,9.1300941 12.162066,7.2860598 8.9683514,9.1300941 Z"
+       id="polygon973" />
+  </g>
+</svg>

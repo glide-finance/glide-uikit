@@ -57,16 +57,23 @@ const BodyWrapper = styled.div`
 `;
 
 //margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+// const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+//   flex-grow: 1;
+//   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+//   transform: translate3d(0, 0, 0);
+//   max-width: 100%;
+
+//   ${({ theme }) => theme.mediaQueries.nav} {
+//     margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+//     max-width: ${({ isPushed }) => `calc(100% - ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px)`};
+//   }
+// `;
+
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
-
-  ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
-    max-width: ${({ isPushed }) => `calc(100% - ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px)`};
-  }
 `;
 
 const MobileOnlyOverlay = styled(Overlay)`
@@ -86,7 +93,8 @@ const Menu: React.FC<NavProps> = ({
   langs,
   setLang,
   currentLang,
-  cakePriceUsd,
+  glidePriceUsd,
+  elaPriceUsd,
   links,
   children,
 }) => {
@@ -155,7 +163,8 @@ const Menu: React.FC<NavProps> = ({
           langs={langs}
           setLang={setLang}
           currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
+          glidePriceUsd={glidePriceUsd}
+          elaPriceUsd={elaPriceUsd}
           pushNav={setIsPushed}
           links={links}
         />
