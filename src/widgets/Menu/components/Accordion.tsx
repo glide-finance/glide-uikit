@@ -2,10 +2,10 @@ import React, { ReactNode, useState } from "react";
 import styled from "styled-components";
 import { MENU_ENTRY_HEIGHT } from "../config";
 import { LinkLabel, LinkStatus as LinkStatusComponent, MenuEntry } from "./MenuEntry";
-import { LinkStatus, PushedProps } from "../types";
+import { LinkStatus } from "../types";
 import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
 
-interface Props extends PushedProps {
+interface Props {
   label: string;
   status?: LinkStatus;
   icon: React.ReactElement;
@@ -22,11 +22,11 @@ const Container = styled.div`
   flex-shrink: 0;
 `;
 
-const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number }>`
+const AccordionContent = styled.div<{ isOpen: boolean, maxHeight: number }>`
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-  border-color: ${({ isOpen, isPushed }) => (isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent")};
+  border-color: ${({ isOpen }) => (isOpen ? "rgba(133, 133, 133, 0.1)" : "transparent")};
   border-style: solid;
   border-width: 1px 0;
 `;
@@ -35,28 +35,26 @@ const Accordion: React.FC<Props> = ({
   label,
   status,
   icon,
-  isPushed,
-  pushNav,
   initialOpenState = false,
   children,
   className,
   isActive,
 }) => {
   const [isOpen, setIsOpen] = useState(initialOpenState);
-  const handleClick = () => {
-    if (isPushed) {
-      setIsOpen((prevState) => !prevState);
-    } else {
-      pushNav(true);
-      setIsOpen(true);
-    }
-  };
+  // const handleClick = () => {
+  //   if (isPushed) {
+  //     setIsOpen((prevState) => !prevState);
+  //   } else {
+  //     pushNav(true);
+  //     setIsOpen(true);
+  //   }
+  // };
 
   return (
     <Container>
-      <MenuEntry onClick={handleClick} className={className} isActive={isActive} role="button">
+      <MenuEntry className={className} isActive={isActive} role="button">
         {icon}
-        <LinkLabel isPushed={isPushed}>{label}</LinkLabel>
+        <LinkLabel>{label}</LinkLabel>
         {status && (
           <LinkStatusComponent color={status.color} fontSize="14px">
             {status.text}
@@ -66,7 +64,7 @@ const Accordion: React.FC<Props> = ({
       </MenuEntry>
       <AccordionContent
         isOpen={isOpen}
-        isPushed={isPushed}
+        // isPushed={isPushed}
         maxHeight={React.Children.count(children) * MENU_ENTRY_HEIGHT}
       >
         {children}

@@ -2,32 +2,18 @@ import React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 
-const Icon: React.FC = (props) => {
+const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" height={16} width={16} {...props}>
-      <defs>
-        <linearGradient
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="matrix(83.96 0 0 -88.1 -430035.42 -632293.51)"
-          y2={-7178.97}
-          x2={5126.72}
-          y1={-7178.97}
-          x1={5126.21}
-          id="prefix__a"
-        >
-          <stop stopColor="#f2ad6c" offset={0} />
-          <stop stopColor="#fff" offset={1} />
-        </linearGradient>
-      </defs>
-      <circle
+    <Svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" {...props}>
+      {/* <circle
         r={8}
         cy={8}
         cx={8}
-        fill="#fff"
+        fill="#000"
         paintOrder="stroke fill markers"
-      />
-      <path d="M4.806 2.686L1.613 4.53l3.193 1.855L8 8.228l3.194-1.843 3.193-1.855-3.193-1.844L8 4.53z" />
-      <path d="M4.806 7.772L1.613 9.616l3.193 1.854L8 13.314l3.194-1.844 3.193-1.854-3.193-1.844L8 9.616z" />
+      /> */}
+      <path d="M5.04 3.074l-2.96 1.71 2.96 1.719L8 8.212l2.96-1.71 2.96-1.718-2.96-1.71L8 4.784z" fill="#fff"/>
+      <path d="M5.04 7.788l-2.96 1.71 2.96 1.718L8 12.926l2.96-1.71 2.96-1.718-2.96-1.71L8 9.498z" fill="#fff"/>
     </Svg>
   );
 };

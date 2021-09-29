@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from "./Spinner";
+import ButterflyLoader from "./ButterflyLoader";
 
 export default {
   title: "Components/Spinner",
@@ -8,5 +9,10 @@ export default {
 };
 
 export const Default: React.FC = () => {
-  return <Spinner size={50} />;
+  return (
+    <div>
+      <Spinner size={50} />
+      <ButterflyLoader size={50} />
+    </div>
+  );
 };

@@ -20,6 +20,7 @@ export * from "./components/Overlay";
 export * from "./components/PancakeToggle";
 export * from "./components/Progress";
 export * from "./components/Radio";
+export * from "./components/SocialLinks";
 export * from "./components/Slider";
 export * from "./components/Skeleton";
 export * from "./components/Spinner";

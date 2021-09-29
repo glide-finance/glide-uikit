@@ -34,9 +34,9 @@ const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, them
     return theme.colors.success;
   }
 
-  if (isActive) {
-    return `linear-gradient(180deg, ${theme.colors.primaryBright}, ${theme.colors.secondary})`;
-  }
+  // if (isActive) {
+  //   return `linear-gradient(180deg, ${theme.colors.primaryBright}, ${theme.colors.secondary})`;
+  // }
 
   return theme.colors.cardBorder;
 };
@@ -47,18 +47,27 @@ export const StyledCard = styled.div<StyledCardProps>`
   color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
   overflow: hidden;
   position: relative;
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      animation: ${PromotedGradient} 3s ease infinite;
-      background-size: 400% 400%;
-    `}
-
-  padding: 1px 1px 3px 1px;
-
   ${space}
 `;
+
+// export const StyledCard = styled.div<StyledCardProps>`
+//   background: ${getBorderColor};
+//   border-radius: ${({ theme }) => theme.radii.card};
+//   color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
+//   overflow: hidden;
+//   position: relative;
+
+//   ${({ isActive }) =>
+//     isActive &&
+//     css`
+//       animation: ${PromotedGradient} 3s ease infinite;
+//       background-size: 400% 400%;
+//     `}
+
+//   padding: 1px 1px 3px 1px;
+
+//   ${space}
+// `;
 
 export const StyledCardInner = styled(Box)<{ background?: string; hasCustomBorder: boolean }>`
   width: 100%;

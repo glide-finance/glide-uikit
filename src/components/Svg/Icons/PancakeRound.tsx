@@ -2,7 +2,7 @@ import React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 
-const Icon: React.FC = (props) => {
+const Icon: React.FC<SvgProps> = (props) => {
   return (
  <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +10,7 @@ const Icon: React.FC = (props) => {
       viewBox="0 0 90 90"
       {...props}
     >
-      <circle r={45} cy={45} cx={45} fill="#09101a" />
+      {/* <circle r={45} cy={45} cx={45} fill="#000" /> */}
       <path
         data-name="Path 12"
         d="M64.24 16.172a.127.127 0 00-.025-.031c.013.02.023.04.033.057a.115.115 0 01-.008-.026zm4.703 20.902v.009a.076.076 0 000-.026.02.02 0 010 .017zm.134.469a.661.661 0 00.022.078c-.008-.031-.017-.056-.022-.078zm2.936 4.665a.82.82 0 00.042-.097.343.343 0 01-.042.097zm-4.762 4.955a10.214 10.214 0 001.081-.616c-.349.22-.708.425-1.078.616z"

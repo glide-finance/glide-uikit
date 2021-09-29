@@ -8,7 +8,7 @@ import { Colors } from "../../../../theme/types";
 const MenuIconWrapper = styled.div<{ borderColor: keyof Colors }>`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background};
-  border-color: ${({ theme, borderColor }) => theme.colors[borderColor]};
+  border-color: ${({ theme, borderColor }) => theme.colors.secondary};
   border-radius: 50%;
   border-style: solid;
   border-width: 2px;
@@ -34,26 +34,26 @@ const ProfileIcon = styled(Image)`
 `;
 
 export const NoProfileMenuIcon: React.FC = () => (
-  <MenuIconWrapper borderColor="primary">
-    <WalletFilledIcon color="primary" width="24px" />
+  <MenuIconWrapper borderColor="secondary">
+    <WalletFilledIcon color="primary" width="20px" />
   </MenuIconWrapper>
 );
 
 export const PendingMenuIcon: React.FC = () => (
   <MenuIconWrapper borderColor="secondary">
-    <RefreshIcon color="secondary" width="24px" spin />
+    <RefreshIcon color="secondary" width="20px" spin />
   </MenuIconWrapper>
 );
 
 export const WarningMenuIcon: React.FC = () => (
   <MenuIconWrapper borderColor="warning">
-    <WarningIcon color="warning" width="24px" />
+    <WarningIcon color="warning" width="20px" />
   </MenuIconWrapper>
 );
 
 export const DangerMenuIcon: React.FC = () => (
   <MenuIconWrapper borderColor="failure">
-    <WarningIcon color="failure" width="24px" />
+    <WarningIcon color="failure" width="20px" />
   </MenuIconWrapper>
 );
 

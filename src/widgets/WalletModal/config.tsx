@@ -1,5 +1,6 @@
 import Metamask from "../../components/Svg/Icons/Metamask";
 import WalletConnect from "../../components/Svg/Icons/WalletConnect";
+import Essentials from "../../components/Svg/Icons/Essentials";
 import TrustWallet from "../../components/Svg/Icons/TrustWallet";
 import MathWallet from "../../components/Svg/Icons/MathWallet";
 import TokenPocket from "../../components/Svg/Icons/TokenPocket";
@@ -22,6 +23,13 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.WalletConnect,
     priority: 2,
   },
+  {
+    title: "Essentials",
+    icon: Essentials,
+    connectorId: ConnectorNames.WalletConnect,
+    priority: 3,
+  },
+
   // {
   //   title: "Trust Wallet",
   //   icon: TrustWallet,

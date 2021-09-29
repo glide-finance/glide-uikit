@@ -31,7 +31,7 @@ it("renders correctly", () => {
   const { asFragment } = renderWithTheme(
     <BrowserRouter>
       <Menu
-        isDark={false}
+        isDark={true}
         toggleTheme={noop}
         langs={langs}
         setLang={noop}

@@ -1,3 +1,6 @@
+import { noop } from "lodash";
+import { DropdownMenuItems, DropdownMenuItemType } from "../../components/DropdownMenu/types";
+import { MenuItemsType } from "../../components/MenuItems/types";
 import { LinkStatus } from "./types";
 
 export const status = {
@@ -15,14 +18,10 @@ export const status = {
   },
 };
 
-export const links = [
-  {
-    label: "Home",
-    icon: "HomeIcon",
-    href: "/",
-  },
+export const links: MenuItemsType[] = [
   {
     label: "Trade",
+    href: "/swap",
     icon: "TradeIcon",
     items: [
       {
@@ -36,106 +35,52 @@ export const links = [
     ],
   },
   {
-    label: "Farms",
-    icon: "FarmIcon",
-    href: "/farms",
-    status: status.LIVE,
+    label: 'Farm',
+    icon: 'FarmIcon',
+    href: '/farms',
+  },
+
+];
+
+export const userMenulinks: DropdownMenuItems[] = [
+  {
+    label: "Wallet",
+    onClick: noop,
+    type: DropdownMenuItemType.BUTTON,
   },
   {
-    label: "Pools",
-    icon: "PoolIcon",
-    href: "/syrup",
+    label: "Transactions",
+    type: DropdownMenuItemType.BUTTON,
   },
   {
-    label: "Lottery",
-    icon: "TicketIcon",
-    href: "/lottery",
+    type: DropdownMenuItemType.DIVIDER,
   },
   {
-    label: "NFT",
-    icon: "NftIcon",
-    href: "/nft",
+    type: DropdownMenuItemType.BUTTON,
+    disabled: true,
+    label: "Dashboard",
   },
   {
-    label: "Team Battle",
-    icon: "TeamBattleIcon",
-    href: "/competition",
-    status: status.SOON,
+    type: DropdownMenuItemType.BUTTON,
+    disabled: true,
+    label: "Portfolio",
   },
   {
-    label: "Profile & Teams",
-    icon: "GroupsIcon",
-    status: status.LIVE,
-    items: [
-      {
-        label: "Leaderboard",
-        href: "/teams",
-        status: status.NEW,
-      },
-      {
-        label: "YourProfile",
-        href: "/",
-      },
-    ],
-    calloutClass: "rainbow",
+    label: "Profile",
+    href: "/profile",
   },
   {
-    label: "Info",
-    icon: "InfoIcon",
-    items: [
-      {
-        label: "Overview",
-        href: "https://pancakeswap.info",
-      },
-      {
-        label: "Tokens",
-        href: "https://pancakeswap.info/tokens",
-      },
-      {
-        label: "Pairs",
-        href: "https://pancakeswap.info/pairs",
-      },
-      {
-        label: "Accounts",
-        href: "https://pancakeswap.info/accounts",
-      },
-    ],
+    type: DropdownMenuItemType.EXTERNAL_LINK,
+    href: "https://pancakeswap.finance",
+    label: "Link",
   },
   {
-    label: "IFO",
-    icon: "IfoIcon",
-    items: [
-      {
-        label: "Next",
-        href: "/ifo",
-      },
-      {
-        label: "History",
-        href: "/ifo/history",
-      },
-    ],
+    type: DropdownMenuItemType.DIVIDER,
   },
   {
-    label: "More",
-    icon: "MoreIcon",
-    items: [
-      {
-        label: "Voting",
-        href: "https://voting.pancakeswap.finance",
-      },
-      {
-        label: "Github",
-        href: "https://github.com/pancakeswap",
-      },
-      {
-        label: "Docs",
-        href: "https://docs.pancakeswap.finance",
-      },
-      {
-        label: "Blog",
-        href: "https://pancakeswap.medium.com",
-      },
-    ],
+    type: DropdownMenuItemType.BUTTON,
+    onClick: noop,
+    label: "Disconnect",
   },
 ];
 
@@ -166,10 +111,10 @@ export const socials = [
     icon: "GitbookIcon",
     href: "docs.glidefinance.io"
   },
-
 ];
 
-export const MENU_HEIGHT = 64;
+export const MENU_HEIGHT = 56;
 export const MENU_ENTRY_HEIGHT = 48;
+export const MOBILE_MENU_HEIGHT = 44;
 export const SIDEBAR_WIDTH_FULL = 240;
 export const SIDEBAR_WIDTH_REDUCED = 56;

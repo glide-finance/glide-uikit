@@ -1,5 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
+import GradientHeading from "./GradientHeading";
 
 export default {
   title: "Components/Heading",
@@ -12,7 +13,9 @@ export const Sizes: React.FC = () => {
     <div>
       <Heading>Default</Heading>
       <Heading scale="md">Size md</Heading>
-      <Heading scale="lg">Size lg</Heading>
+      <GradientHeading scale="xxl" color="glide">
+        Size lg
+      </GradientHeading>
       <Heading scale="xl">Size xl</Heading>
       <Heading scale="xxl">Size xxl</Heading>
     </div>

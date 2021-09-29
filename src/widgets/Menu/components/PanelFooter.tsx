@@ -4,13 +4,13 @@ import { CogIcon } from "../../../components/Svg";
 import IconButton from "../../../components/Button/IconButton";
 import Flex from "../../../components/Box/Flex";
 import { MENU_ENTRY_HEIGHT } from "../config";
-import { PanelProps, PushedProps } from "../types";
-import ThemeSwitcher from "./ThemeSwitcher";
+import { PanelProps } from "../types";
+import ThemeSwitcher from "../../../components/ThemeSwitcher/ThemeSwitcher";
 import SocialLinks from "./SocialLinks";
-import LangSelector from "./LangSelector";
-import CakePrice from "./CakePrice";
+import LangSelector from "../../../components/LangSelector/LangSelector";
+import CakePrice from "../../../components/CakePrice/CakePrice";
 
-interface Props extends PanelProps, PushedProps {}
+interface Props extends PanelProps {}
 
 // const Container = styled.div`
 //   flex: none;
@@ -21,7 +21,7 @@ interface Props extends PanelProps, PushedProps {}
 
 const Container = styled.div`
   flex: none;
-  padding: 8px 4px;
+  padding: 8px 2px;
 `;
 
 const SettingsEntry = styled.div`
@@ -43,22 +43,23 @@ const SocialEntry = styled.div`
 const PriceFlex = styled(Flex)`
     -webkit-box-pack: center;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     margin-top: 8px;
-    width: 80%;
-    border: 2px solid rgba(133, 133, 133, 0.1);
+    width: 90%;
+    padding: 2px;
     border-radius: 10px;
 `;
 
-// border-top: solid 2px rgba(133, 133, 133, 0.1);
+//  border: 1px solid ${({ theme }) => theme.colors.textSubtle};
+
 const PriceRow = styled(Flex)`
     -webkit-box-pack: center;
     justify-content: center;
 `
 
 const PanelFooter: React.FC<Props> = ({
-  isPushed,
-  pushNav,
+  // isPushed,
+  // pushNav,
   toggleTheme,
   isDark,
   currentLang,
@@ -67,15 +68,15 @@ const PanelFooter: React.FC<Props> = ({
   glidePriceUsd,
   elaPriceUsd
 }) => {
-  if (!isPushed) {
-    return (
-      <Container>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
-        </IconButton>
-      </Container>
-    );
-  }
+  // if (!isPushed) {
+  //   return (
+  //     <Container>
+  //       <IconButton variant="text" onClick={() => pushNav(true)}>
+  //         <CogIcon />
+  //       </IconButton>
+  //     </Container>
+  //   );
+  // }
 
   return (
     <Container>
