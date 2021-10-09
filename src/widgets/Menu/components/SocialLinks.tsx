@@ -4,14 +4,14 @@ import Flex from "../../../components/Box/Flex";
 import Dropdown from "../../../components/Dropdown/Dropdown";
 import Link from "../../../components/Link/Link";
 import * as IconModule from "../../../components/Svg";
-import { socials } from "../config";
+import { socials } from "../../../components/SocialLinks/config";
 
 const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
 const SocialLinks: React.FC = () => (
   <Flex>
     {socials.map((social, index) => {
-      const Icon = Icons[social.icon];
+      const IconElement = Icons[`${social.icon}Icon`];
       const iconProps = { width: "24px", color: "contrast", style: { cursor: "pointer" } };
       const mr = index < socials.length - 1 ? "24px" : 0;
       // if (social.items) {
@@ -25,13 +25,13 @@ const SocialLinks: React.FC = () => (
       //     </Dropdown>
       //   );
       // }
-      return (
+      return IconElement ? (
         <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
-          <Icon {...iconProps} />
+          <IconElement {...iconProps} />
         </Link>
-      );
+      ) : null;
     })}
   </Flex>
 );
 
-export default React.memo(SocialLinks, () => true);
+export default React.memo(SocialLinks);

@@ -8,6 +8,8 @@ export interface DropdownMenuProps extends BoxProps {
   isBottomNav?: boolean;
   openMenuTimeout?: number;
   showItemsOnMobile?: boolean;
+  glidePriceUsd?: number;
+  elaPriceUsd?: number;
 }
 
 export interface StyledDropdownMenuItemProps extends React.ComponentPropsWithoutRef<"button"> {
@@ -20,7 +22,8 @@ export enum DropdownMenuItemType {
   EXTERNAL_LINK,
   BUTTON,
   DIVIDER,
-  SOCIALS
+  SOCIALS,
+  PRICE
 }
 
 export interface LinkStatus {

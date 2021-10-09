@@ -22,11 +22,11 @@ export const socials = [
     icon: "Medium",
     href: "https://medium.com/glide-finance"
   },
-  {
-    label: "Docs",
-    icon: "Gitbook",
-    href: "https://docs.glidefinance.io"
-  },
+  // {
+  //   label: "Docs",
+  //   icon: "Gitbook",
+  //   href: "https://docs.glidefinance.io"
+  // },
     {
     label: "Github",
     icon: "Github",

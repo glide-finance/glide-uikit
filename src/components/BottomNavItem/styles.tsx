@@ -7,13 +7,14 @@ export const StyledBottomNavItem = styled.button`
   background: transparent;
   cursor: pointer;
   height: 44px;
-  padding: 4px 12px;
+  padding: 4px 16px;
+  margin-bottom: 4px;
   &:hover {
     border-radius: 16px;
   }
   &:hover,
   &:hover div {
-    background: ${({ theme }) => theme.colors.tertiary};
+    background: ${({ theme }) => theme.colors.secondary};
   }
 `;
 

@@ -15,6 +15,7 @@ import {
 } from "./styles";
 import { DropdownMenuItemType, DropdownMenuProps } from "./types";
 import SocialLinks from "../SocialLinks/SocialLinks";
+import CakePrice from "../CakePrice/CakePrice";
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({
   children,
@@ -25,6 +26,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   openMenuTimeout = 0,
   ...props
 }) => {
+  const { glidePriceUsd, elaPriceUsd } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
@@ -126,7 +128,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   return (
     <Box ref={isBottomNav ? null : setTargetRef} {...props}>
       <Box ref={isBottomNav ? setTargetRef : null}>{children}</Box>
-      {isBottomNav && isOpen && showItemsOnMobile && <StyledOverlay />}
+      {/* {isBottomNav && isOpen && showItemsOnMobile && <StyledOverlay />} */}
       {hasItems && (
         <StyledDropdownMenu
           style={styles.popper}
@@ -170,6 +172,11 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   )}
                   {type === DropdownMenuItemType.DIVIDER && <DropdownMenuDivider />}
                   {type === DropdownMenuItemType.SOCIALS && <SocialLinks />}
+                  {type === DropdownMenuItemType.PRICE && (
+                    <Flex justifyContent="center" style={{ paddingTop: "8px" }}>
+                      <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} short />
+                    </Flex>
+                  )}
                 </StyledDropdownMenuItemContainer>
               );
             }

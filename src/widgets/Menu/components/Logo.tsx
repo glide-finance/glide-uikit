@@ -1,10 +1,10 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
-import { LogoIcon } from "../../../components/Svg";
+import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import Flex from "../../../components/Box/Flex";
-import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "../icons";
 import MenuButton from "./MenuButton";
+import { useMatchBreakpoints } from "../../../hooks";
 
 interface Props {
   isDark: boolean;
@@ -52,14 +52,14 @@ const StyledLink = styled(Link)`
   align-items: center;
   margin: 0 auto;
   .mobile-icon {
-    width: 32px;
-    ${({ theme }) => theme.mediaQueries.nav} {
+    width: 40px;
+    ${({ theme }) => theme.mediaQueries.lg} {
       display: none;
     }
   }
   .desktop-icon {
     display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
+    ${({ theme }) => theme.mediaQueries.lg} {
       display: block;
     }
   }
@@ -77,17 +77,23 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isDark, href }) => {
+const Logo: React.FC<Props> = ({ isDark, href, account }) => {
   const isAbsoluteUrl = href.startsWith("http");
+  const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
+
   const innerLogo = (
     <>
-      {/* <LogoIcon className="mobile-icon" /> */}
-      <LogoWithText className="desktop-icon" isDark={isDark} />
+      {/* {isMobile || isTablet ? (
+        <LogoWithTextIcon /> // LogoIcon
+      ) : (
+        <LogoWithTextIcon />
+      )} */}
+      {(isMobile || isTablet) && !account ? <LogoIcon /> : <LogoWithTextIcon />}
     </>
   );
 
   return (
-    <Flex>
+    <Flex style={{ marginLeft: "10px" }}>
       {/* <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
         {isPushed ? (
           <HamburgerCloseIcon width="24px" color="textSubtle" />

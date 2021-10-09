@@ -13,7 +13,6 @@ const BottomNavItem: React.FC<BottomNavItemProps> = ({
   isActive = false,
   ...props
 }) => {
-
   const bottomNavItemContent = (
     <Flex flexDirection="column" justifyContent="center" alignItems="center" height="100%">
       {iconName && (
@@ -21,16 +20,12 @@ const BottomNavItem: React.FC<BottomNavItemProps> = ({
           iconName={iconName}
           height="22px"
           width="21px"
-          color={isActive ? "secondary" : "textSubtle"}
+          color={isActive ? "text" : "text"}
           isActive={isActive}
           activeBackgroundColor="backgroundAlt"
         />
       )}
-      <StyledBottomNavText
-        color={isActive ? "text" : "textSubtle"}
-        fontWeight={isActive ? "600" : "400"}
-        fontSize="10px"
-      >
+      <StyledBottomNavText color={isActive ? "text" : "text"} fontWeight={isActive ? "600" : "400"} fontSize="10px">
         {label}
       </StyledBottomNavText>
     </Flex>

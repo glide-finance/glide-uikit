@@ -7,6 +7,7 @@ import { MENU_ENTRY_HEIGHT } from "../config";
 import { PanelProps } from "../types";
 import ThemeSwitcher from "../../../components/ThemeSwitcher/ThemeSwitcher";
 import SocialLinks from "./SocialLinks";
+import LinkExternal from "../../../components/Link/LinkExternal";
 import LangSelector from "../../../components/LangSelector/LangSelector";
 import CakePrice from "../../../components/CakePrice/CakePrice";
 
@@ -27,9 +28,10 @@ const Container = styled.div`
 const SettingsEntry = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 8px;
+  padding: 16px;
+  margin-bottom: 8px;
 `;
 
 const SocialEntry = styled.div`
@@ -41,21 +43,21 @@ const SocialEntry = styled.div`
 `;
 
 const PriceFlex = styled(Flex)`
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 8px;
-    width: 90%;
-    padding: 2px;
-    border-radius: 10px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  width: 90%;
+  padding: 2px;
+  border-radius: 10px;
 `;
 
 //  border: 1px solid ${({ theme }) => theme.colors.textSubtle};
 
 const PriceRow = styled(Flex)`
-    -webkit-box-pack: center;
-    justify-content: center;
-`
+  -webkit-box-pack: center;
+  justify-content: center;
+`;
 
 const PanelFooter: React.FC<Props> = ({
   // isPushed,
@@ -66,7 +68,7 @@ const PanelFooter: React.FC<Props> = ({
   langs,
   setLang,
   glidePriceUsd,
-  elaPriceUsd
+  elaPriceUsd,
 }) => {
   // if (!isPushed) {
   //   return (
@@ -81,15 +83,26 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <PriceRow>
-          <PriceFlex>
-            <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} />
-          </PriceFlex>
+        <PriceFlex>
+          <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} />
+        </PriceFlex>
       </PriceRow>
-      {/* <SettingsEntry> */}
+      <SettingsEntry>
         {/* <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} /> */}
-      {/* </SettingsEntry> */}
+        <LangSelector
+          padding
+          color="contrast"
+          currentLang={currentLang}
+          langs={langs}
+          setLang={setLang}
+          hideLanguage
+          buttonScale="sm"
+        />
+        <LinkExternal small href={`https://docs.glidefinance.io`} mr="16px">
+          {"Documentation"}
+        </LinkExternal>
+      </SettingsEntry>
       <SocialEntry>
-        {/* <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} /> */}
         <SocialLinks />
       </SocialEntry>
     </Container>

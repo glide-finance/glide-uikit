@@ -39,6 +39,7 @@ export interface MenuEntry {
   calloutClass?: string;
   initialOpenState?: boolean;
   status?: LinkStatus;
+  showOnDesktop?: boolean;
 }
 
 export interface PanelProps {

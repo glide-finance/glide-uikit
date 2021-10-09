@@ -9,6 +9,7 @@ export interface Props {
   color?: keyof Colors;
   elaPriceUsd?: number;
   glidePriceUsd?: number;
+  short?: boolean;
 }
 
 const PriceLink = styled.a`
@@ -30,16 +31,25 @@ const PriceLink = styled.a`
   width: 100%;
 `;
 
-const CakePrice: React.FC<Props> = ({ glidePriceUsd, elaPriceUsd }) => {
+const CakePrice: React.FC<Props> = ({ glidePriceUsd, elaPriceUsd, short }) => {
   return glidePriceUsd && elaPriceUsd ? (
     <PriceLink
       href="https://glidefinance.io/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
       target="_blank"
     >
-      <PancakeRoundIcon width="24px" mr="4px" />
-      <Text color="contrast" fontSize="19px" bold>{`$${glidePriceUsd.toFixed(3)} = `}</Text>
-      <ElastosRoundIcon width="24px" mr="4px" ml="4px"/>
-      <Text color="contrast" fontSize="19px" bold>{`${(glidePriceUsd/elaPriceUsd).toFixed(3)}`}</Text>
+      {short ? (
+        <>
+          <PancakeRoundIcon width="32px" mr="8px" />
+          <Text color="contrast" fontSize="20px" bold>{`$${glidePriceUsd.toFixed(3)}`}</Text>   
+        </>
+      ) : (
+        <>
+          <PancakeRoundIcon width="24px" mr="4px" />
+          <Text color="contrast" fontSize="19px" bold>{`$${glidePriceUsd.toFixed(3)} = `}</Text>
+          <ElastosRoundIcon width="24px" mr="4px" ml="4px"/>
+          <Text color="contrast" fontSize="19px" bold>{`${(glidePriceUsd/elaPriceUsd).toFixed(3)}`}</Text>
+        </>
+      )}
     </PriceLink>
   ) : (
     <Skeleton width={80} height={24} />

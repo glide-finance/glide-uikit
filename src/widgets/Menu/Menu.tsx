@@ -4,6 +4,7 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import BottomNav from "../../components/BottomNav";
+import LangSelector from "../../components/LangSelector/LangSelector";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import Panel from "./components/Panel";
@@ -13,6 +14,10 @@ import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+`;
+
+const StyledFlex = styled(Flex)`
+  margin-left: 8px;
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -28,10 +33,14 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
   transform: translate3d(0, 0, 0);
 `;
+
+// border-bottom: solid 2px rgba(133, 133, 133, 0.1);
+// border-bottom-left-radius: 24px;
+// border-bottom-right-radius: 24px;
+// margin-bottom: 50px;
 
 const BodyWrapper = styled.div`
   position: relative;
@@ -85,12 +94,13 @@ const Menu: React.FC<NavProps> = ({
   links,
   children,
   activeItem,
-  activeSubItem
+  activeSubItem,
+  account,
 }) => {
-  const { isMobile, isTablet } = useMatchBreakpoints();
+  const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
   const hideSidebar = isMobile === true || isTablet === true;
   // const [isPushed, setIsPushed] = useState(!isMobile);
-  // const [showMenu, setShowMenu] = useState(!hideSidebar);
+  // const [showMenu, setShowMenu] = useState(hideSidebar);
   const refPrevOffset = useRef(window.pageYOffset);
 
   useEffect(() => {
@@ -99,11 +109,10 @@ const Menu: React.FC<NavProps> = ({
       const isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
       const isTopOfPage = currentOffset === 0;
       // Always show the menu when user reach the top
-    
       // if (isTopOfPage) {
       //   setShowMenu(true);
       // }
-      // // Avoid triggering anything at the bottom because of layout shift
+      // Avoid triggering anything at the bottom because of layout shift
       // else if (!isBottomOfPage) {
       //   if (currentOffset < refPrevOffset.current) {
       //     // Has scroll up
@@ -130,12 +139,14 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={hideSidebar}>
         <Logo
+          account={account}
           // isPushed={isPushed}
           // togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
         <Flex>
+          <LangSelector color="textSubtle" currentLang={currentLang} langs={langs} setLang={setLang} hideLanguage />
           {globalMenu} {userMenu}
         </Flex>
       </StyledNav>
@@ -158,61 +169,20 @@ const Menu: React.FC<NavProps> = ({
           // pushNav={setIsPushed}
           links={links}
         />
-        <Inner showMenu={!hideSidebar}>
-          {children}
-        </Inner>
+        <Inner showMenu={!hideSidebar}>{children}</Inner>
         {/* <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" /> */}
       </BodyWrapper>
-      {hideSidebar && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
+      {hideSidebar && (
+        <BottomNav
+          items={links}
+          activeItem={activeItem}
+          activeSubItem={activeSubItem}
+          glidePriceUsd={glidePriceUsd}
+          elaPriceUsd={elaPriceUsd}
+        />
+      )}
     </Wrapper>
   );
 };
 
 export default Menu;
-
-// return (
-//     <Wrapper>
-//       <StyledNav showMenu={showMenu}>
-//         <Flex>
-//           <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-//           {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
-//         </Flex>
-//         <Flex alignItems="center">
-//           {!isMobile && (
-//             <Box mr="12px">
-//               <CakePrice cakePriceUsd={cakePriceUsd} />
-//             </Box>
-//           )}
-//           <Box mt="4px">
-//             <LangSelector
-//               currentLang={currentLang}
-//               langs={langs}
-//               setLang={setLang}
-//               buttonScale="xs"
-//               color="textSubtle"
-//               hideLanguage
-//             />
-//           </Box>
-//           {globalMenu} {userMenu}
-//         </Flex>
-//       </StyledNav>
-//       {subLinks && <SubMenuItems items={subLinks} mt={`${MENU_HEIGHT + 1}px`} activeItem={activeSubItem} />}
-//       <BodyWrapper mt={!subLinks ? `${MENU_HEIGHT + 1}px` : "0"}>
-//         <Inner isPushed={false} showMenu={showMenu}>
-//           {children}
-//           <Footer
-//             items={footerLinks}
-//             isDark={isDark}
-//             toggleTheme={toggleTheme}
-//             langs={langs}
-//             setLang={setLang}
-//             currentLang={currentLang}
-//             cakePriceUsd={cakePriceUsd}
-//             buyCakeLabel={buyCakeLabel}
-//             mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
-//           />
-//         </Inner>
-//       </BodyWrapper>
-//       {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
-//     </Wrapper>
-//   );

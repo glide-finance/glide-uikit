@@ -17,5 +17,7 @@ const Template: React.FC<CakePriceProps> = ({ ...args }) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  cakePriceUsd: 20.0,
+  glidePriceUsd: 2,
+  elaPriceUsd: 10,
+  short: true,
 };

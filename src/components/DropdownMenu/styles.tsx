@@ -53,7 +53,7 @@ export const StyledDropdownMenuItemContainer = styled.div`
 `;
 
 export const DropdownMenuDivider = styled.hr`
-  border-color: ${({ theme }) => theme.colors.cardBorder};
+  border-color: ${({ theme }) => theme.colors.tertiary};
   border-style: solid;
   border-width: 1px 0 0;
   margin: 4px 0;
@@ -66,14 +66,15 @@ export const StyledOverlay = styled.div`
   bottom: 55px;
   left: 0;
   right: 0;
-  background-color: ${({ theme }) => `${theme.colors.text}99`};
-  backdrop-filter: blur(2px);
+  background-color: ${({ theme }) => `${theme.colors.background}`};
+  backdrop-filter: blur(4px);
 `;
 
 export const StyledDropdownMenu = styled.div<{ $isOpen: boolean; $isBottomNav: boolean }>`
   background-color: ${({ theme }) => theme.card.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: 16px;
+  border: 1px solid ${({ theme }) => theme.colors.tertiary};
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   padding-bottom: 4px;
   padding-top: 4px;
   pointer-events: auto;

@@ -3,6 +3,18 @@ import { DropdownMenuItems, DropdownMenuItemType } from "./types";
 
 const ItemsMock: DropdownMenuItems[] = [
   {
+    type: DropdownMenuItemType.PRICE,
+  },
+  {
+    type: DropdownMenuItemType.DIVIDER,
+  },
+ {
+    type: DropdownMenuItemType.SOCIALS,
+  },
+  {
+    type: DropdownMenuItemType.DIVIDER,
+  },
+  {
     label: "Exchange",
     href: "/swap",
   },
@@ -22,9 +34,6 @@ const ItemsMock: DropdownMenuItems[] = [
     label: "Disconnect",
     onClick: noop,
     type: DropdownMenuItemType.BUTTON,
-  },
-  {
-    type: DropdownMenuItemType.SOCIALS,
   }
 ];
 

@@ -18,6 +18,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", acti
               isBottomNav
               activeItem={activeSubItem}
               showItemsOnMobile={showItemsOnMobile}
+              {...props}
             >
               <Box>
                 <BottomNavItem

@@ -19,7 +19,7 @@ import { Colors } from "./types";
 // };
 
 export const baseColors = {
-  failure: "#d11576",
+  failure: "#d11576", // #5d095d
   primary: "#f1a35b",
   primaryBright: "#53DEE9",
   primaryDark: "#0098A1",

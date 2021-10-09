@@ -22,7 +22,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     href: "/swap",
-    icon: "TradeIcon",
+    icon: "Trade",
     items: [
       {
         label: "Exchange",
@@ -36,10 +36,29 @@ export const links: MenuItemsType[] = [
   },
   {
     label: 'Farm',
-    icon: 'FarmIcon',
+    icon: 'Farm',
     href: '/farms',
   },
-
+  {
+    label: '',
+    href: '/info',
+    icon: 'More',
+    showOnDesktop: false,
+    items: [
+      {
+        type: DropdownMenuItemType.PRICE,
+      },
+      {
+        type: DropdownMenuItemType.DIVIDER,
+      },
+      {
+        type: DropdownMenuItemType.SOCIALS,
+      },
+      {
+        type: DropdownMenuItemType.DIVIDER,
+      }
+    ],
+  }
 ];
 
 export const userMenulinks: DropdownMenuItems[] = [
@@ -84,15 +103,17 @@ export const userMenulinks: DropdownMenuItems[] = [
   },
 ];
 
+
+// Social icons config
 export const socials = [
   {
     label: "Twitter",
-    icon: "TwitterIcon",
+    icon: "Twitter",
     href: "https://twitter.com/GlideFinance",
   },
   {
     label: "Telegram",
-    icon: "TelegramIcon",
+    icon: "Telegram",
     // items: [
     //   {
     //     label: "English",
@@ -103,18 +124,24 @@ export const socials = [
   },
   {
     label: "Medium",
-    icon: "MediumIcon",
+    icon: "Medium",
     href: "https://medium.com/glide-finance"
   },
   {
     label: "Docs",
-    icon: "GitbookIcon",
-    href: "docs.glidefinance.io"
+    icon: "Gitbook",
+    href: "https://docs.glidefinance.io"
   },
+  {
+    label: "Github",
+    icon: "Github",
+    href: "https://github.com/glide-finance"
+  }
 ];
 
+
 export const MENU_HEIGHT = 56;
-export const MENU_ENTRY_HEIGHT = 48;
+export const MENU_ENTRY_HEIGHT = 40;
 export const MOBILE_MENU_HEIGHT = 44;
 export const SIDEBAR_WIDTH_FULL = 240;
 export const SIDEBAR_WIDTH_REDUCED = 56;

@@ -7,7 +7,10 @@ export type MenuItemsType = {
   icon: string;
   items?: DropdownMenuItems[];
   showOnMobile?: boolean;
+  showOnDesktop?: boolean;
   showItemsOnMobile?: boolean;
+  glidePriceUsd?: number;
+  elaPriceUsd?: number;
 };
 
 export interface MenuItemsProps extends BoxProps {
