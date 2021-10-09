@@ -9,6 +9,7 @@ import { useMatchBreakpoints } from "../../../hooks";
 interface Props {
   isDark: boolean;
   href: string;
+  account: string;
 }
 
 const blink = keyframes`

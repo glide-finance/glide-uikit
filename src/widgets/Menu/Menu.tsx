@@ -152,6 +152,7 @@ const Menu: React.FC<NavProps> = ({
       </StyledNav>
       <BodyWrapper>
         <Panel
+          account={account}
           // togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
           href={homeLink?.href ?? "/"}
           // globalMenu={globalMenu}

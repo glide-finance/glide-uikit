@@ -43,11 +43,10 @@ const StyledFlex = styled(Flex)`
 `;
 
 const Panel: React.FC<Props> = (props) => {
-  const { showMenu } = props;
-  const { isDark, href, userMenu, glidePriceUsd, elaPriceUsd } = props;
+  const { showMenu, isDark, href, userMenu, glidePriceUsd, elaPriceUsd, account } = props;
   return (
     <StyledPanel showMenu={showMenu}>
-      <Logo isDark={isDark} href={href} />
+      <Logo isDark={isDark} href={href} account={account} />
       <StyledFlex>
         {/* {globalMenu} */}
         {userMenu}
