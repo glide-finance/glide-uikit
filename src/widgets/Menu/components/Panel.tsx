@@ -15,7 +15,8 @@ interface Props extends PanelProps {
 
 const StyledPanel = styled.div<{ showMenu: boolean }>`
   padding-top: 20px;
-  top: 0;
+  position: sticky;
+  top: 20px;
   left: 0;
   display: none;
   border-radius: 20px;
@@ -43,10 +44,10 @@ const StyledFlex = styled(Flex)`
 `;
 
 const Panel: React.FC<Props> = (props) => {
-  const { showMenu, isDark, href, userMenu, glidePriceUsd, elaPriceUsd, account } = props;
+  const { showMenu, isDark, href, userMenu, glidePriceUsd, elaPriceUsd } = props;
   return (
     <StyledPanel showMenu={showMenu}>
-      <Logo isDark={isDark} href={href} account={account} />
+      <Logo isDark={isDark} href={href} />
       <StyledFlex>
         {/* {globalMenu} */}
         {userMenu}

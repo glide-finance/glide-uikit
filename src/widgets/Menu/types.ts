@@ -43,7 +43,6 @@ export interface MenuEntry {
 }
 
 export interface PanelProps {
-  account: string;
   isDark: boolean;
   toggleTheme: (isDark: boolean) => void;
   glidePriceUsd?: number;
@@ -59,7 +58,6 @@ export interface PanelProps {
 }
 
 export interface NavProps {
-  account: string;
   userMenu?: ReactElement;
   globalMenu?: ReactElement;
   links: Array<MenuItemsType>;

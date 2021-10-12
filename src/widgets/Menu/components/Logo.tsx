@@ -9,7 +9,6 @@ import { useMatchBreakpoints } from "../../../hooks";
 interface Props {
   isDark: boolean;
   href: string;
-  account: string;
 }
 
 const blink = keyframes`
@@ -78,18 +77,18 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isDark, href, account }) => {
+const Logo: React.FC<Props> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
 
   const innerLogo = (
     <>
-      {/* {isMobile || isTablet ? (
+      {isMobile || isTablet ? (
         <LogoWithTextIcon /> // LogoIcon
       ) : (
         <LogoWithTextIcon />
-      )} */}
-      {(isMobile || isTablet) && !account ? <LogoIcon /> : <LogoWithTextIcon />}
+      )}
+      {/* {(isMobile || isTablet) && !account ? <LogoIcon /> : <LogoWithTextIcon />} */}
     </>
   );
 

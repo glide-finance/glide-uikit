@@ -95,7 +95,6 @@ const Menu: React.FC<NavProps> = ({
   children,
   activeItem,
   activeSubItem,
-  account,
 }) => {
   const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
   const hideSidebar = isMobile === true || isTablet === true;
@@ -139,7 +138,7 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={hideSidebar}>
         <Logo
-          account={account}
+          // account={account}
           // isPushed={isPushed}
           // togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
           isDark={isDark}
@@ -147,12 +146,13 @@ const Menu: React.FC<NavProps> = ({
         />
         <Flex>
           <LangSelector color="textSubtle" currentLang={currentLang} langs={langs} setLang={setLang} hideLanguage />
-          {globalMenu} {userMenu}
+          {(isTablet || isDesktop) && globalMenu}
+          {userMenu}
         </Flex>
       </StyledNav>
       <BodyWrapper>
         <Panel
-          account={account}
+          // account={account}
           // togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
           href={homeLink?.href ?? "/"}
           // globalMenu={globalMenu}
