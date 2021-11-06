@@ -85,6 +85,7 @@ const PanelFooter: React.FC<Props> = ({
       <PriceRow>
         <PriceFlex>
           <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} />
+          {/* <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} short /> */}
         </PriceFlex>
       </PriceRow>
       <SettingsEntry>

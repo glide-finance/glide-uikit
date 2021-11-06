@@ -34,20 +34,20 @@ const PriceLink = styled.a`
 const CakePrice: React.FC<Props> = ({ glidePriceUsd, elaPriceUsd, short }) => {
   return glidePriceUsd && elaPriceUsd ? (
     <PriceLink
-      href="https://glidefinance.io/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
+      href="https://glidefinance.io/swap?outputCurrency=0xd88F23867f329fF0B1D145c096b78050825F701A"
       target="_blank"
     >
       {short ? (
         <>
           <PancakeRoundIcon width="32px" mr="8px" />
-          <Text color="contrast" fontSize="20px" bold>{`$${glidePriceUsd.toFixed(3)}`}</Text>   
+          <Text color="contrast" fontSize="20px" bold>{`$${glidePriceUsd.toFixed(3)}`}</Text>
         </>
       ) : (
         <>
           <PancakeRoundIcon width="24px" mr="4px" />
           <Text color="contrast" fontSize="19px" bold>{`$${glidePriceUsd.toFixed(3)} = `}</Text>
-          <ElastosRoundIcon width="24px" mr="4px" ml="4px"/>
-          <Text color="contrast" fontSize="19px" bold>{`${(glidePriceUsd/elaPriceUsd).toFixed(3)}`}</Text>
+          <ElastosRoundIcon width="24px" mr="4px" ml="4px" />
+          <Text color="contrast" fontSize="19px" bold>{`${(glidePriceUsd / elaPriceUsd).toFixed(3)}`}</Text>
         </>
       )}
     </PriceLink>

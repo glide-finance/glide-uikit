@@ -23,18 +23,18 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.WalletConnect,
     priority: 2,
   },
-  // {
-  //   title: "Essentials (Mobile)",
-  //   icon: Essentials,
-  //   connectorId: ConnectorNames.Injected,
-  //   priority: 3,
-  // },
-  // {
-  //   title: "Essentials (Desktop)",
-  //   icon: Essentials,
-  //   connectorId: ConnectorNames.WalletConnect,
-  //   priority: 4,
-  // }
+  {
+    title: "Essentials (Injected)",
+    icon: Essentials,
+    connectorId: ConnectorNames.Injected,
+    priority: 3,
+  },
+  {
+    title: "Essentials (Remote)",
+    icon: Essentials,
+    connectorId: ConnectorNames.WalletConnect,
+    priority: 4,
+  },
   // {
   //   title: "Trust Wallet",
   //   icon: TrustWallet,
