@@ -1,4 +1,5 @@
 export { default as AddIcon } from "./Icons/Add";
+export { default as AnalyticsIcon } from "./Icons/Analytics";
 export { default as ArrowBackIcon } from "./Icons/ArrowBack";
 export { default as ArrowDownIcon } from "./Icons/ArrowDown";
 export { default as ArrowDropDownIcon } from "./Icons/ArrowDropDown";
@@ -34,6 +35,7 @@ export { default as CommunityIcon } from "./Icons/Community";
 export { default as CopyIcon } from "./Icons/Copy";
 export { default as CrownIcon } from "./Icons/Crown";
 export { default as CurrencyIcon } from "./Icons/Currency";
+export { default as DiscordIcon } from "./Icons/Discord";
 export { default as ElastosIcon } from "./Icons/Elastos";
 export { default as ElastosRoundIcon } from "./Icons/ElastosRound";
 export { default as Essentials } from "./Icons/Essentials";
@@ -70,6 +72,7 @@ export { default as MedalPurpleIcon } from "./Icons/MedalPurple";
 export { default as MedalSilverIcon } from "./Icons/MedalSilver";
 export { default as MedalTealIcon } from "./Icons/MedalTeal";
 export { default as MediumIcon } from "./Icons/Medium";
+export { default as MemesIcon } from "./Icons/Memes";
 export { default as MetamaskIcon } from "./Icons/Metamask";
 export { default as MinusIcon } from "./Icons/Minus";
 export { default as MoonIcon } from "./Icons/Moon";
@@ -131,6 +134,3 @@ export { default as WalletFilledIcon } from "./Icons/WalletFilled";
 export { default as WaitIcon } from "./Icons/Wait";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
-
-
-

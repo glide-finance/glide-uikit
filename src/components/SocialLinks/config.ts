@@ -7,14 +7,13 @@ export const socials = [
     href: "https://twitter.com/GlideFinance",
   },
   {
+    label: "Discord",
+    icon: "Discord",
+    href: "https://discord.gg/EW49MSxx4P"
+  },
+  {
     label: "Telegram",
     icon: "Telegram",
-    // items: [
-    //   {
-    //     label: "English",
-    //     href: "https://t.me/glide_finance",
-    //   },
-    // ],
     href: "https://t.me/glide_finance"
   },
   {
@@ -27,9 +26,9 @@ export const socials = [
   //   icon: "Gitbook",
   //   href: "https://docs.glidefinance.io"
   // },
-    {
-    label: "Github",
-    icon: "Github",
-    href: "https://github.com/glide-finance"
-  },
+  // {
+  //   label: "Github",
+  //   icon: "Github",
+  //   href: "https://github.com/glide-finance"
+  // },
 ];

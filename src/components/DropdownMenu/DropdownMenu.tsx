@@ -174,7 +174,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   {type === DropdownMenuItemType.SOCIALS && <SocialLinks />}
                   {type === DropdownMenuItemType.PRICE && (
                     <Flex justifyContent="center" style={{ paddingTop: "8px" }}>
-                      <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} short />
+                      <CakePrice glidePriceUsd={glidePriceUsd} elaPriceUsd={elaPriceUsd} />
                     </Flex>
                   )}
                 </StyledDropdownMenuItemContainer>

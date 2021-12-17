@@ -34,7 +34,7 @@ const PriceLink = styled.a`
 const CakePrice: React.FC<Props> = ({ glidePriceUsd, elaPriceUsd, short }) => {
   return glidePriceUsd && elaPriceUsd ? (
     <PriceLink
-      href="https://glidefinance.io/swap?outputCurrency=0xd88F23867f329fF0B1D145c096b78050825F701A"
+      href="https://glidefinance.io/swap?outputCurrency=0xd39eC832FF1CaaFAb2729c76dDeac967ABcA8F27"
       target="_blank"
     >
       {short ? (
